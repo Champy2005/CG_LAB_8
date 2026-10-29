@@ -445,18 +445,21 @@ At the intersection between red and blue panes, sorted rendering creates a disti
 \end{figure}
 
 % -----------------------------------------------------------------------------
+\clearpage
 \section{AI Prompt and Assistance Log}
 % -----------------------------------------------------------------------------
 
-In compliance with laboratory submission requirements (\S8), all AI interactions are cataloged with model identity, engineering rationale, and independent verification procedures.
+In compliance with laboratory submission requirements (\S8), all AI interactions are cataloged with interaction context, engineering rationale, and independent verification procedures.
 
-\begin{table}[htbp]
-\centering\footnotesize
-\begin{tabular}{p{0.08\textwidth}p{0.18\textwidth}p{0.32\textwidth}p{0.34\textwidth}}
+\vspace{0.5em}
+\noindent
+\begin{center}
+\footnotesize
+\begin{tabular}{p{0.06\textwidth}p{0.18\textwidth}p{0.33\textwidth}p{0.35\textwidth}}
 \toprule
 \textbf{Entry} & \textbf{Interaction} & \textbf{Engineering Concept \& Rationale} & \textbf{Verification Procedure} \\
 \midrule
-1 & Build Setup \& Diagnostics & Resolved MSVC \texttt{/Wextra} compiler option and configured GLFW3 prefix path. & Verified Vulkan device features and task status with \texttt{make.bat info}. \\
+1 & Build Setup \& Diagnostics & Resolved MSVC \texttt{/W3} compiler option and configured GLFW3 prefix path. & Verified Vulkan device features and task status with \texttt{make.bat info}. \\
 \addlinespace
 2 & Part I: sRGB Transfers & Formulated branchless IEC transfer functions and $Y$-luminance albedo QA filter. & Checked all 256 ramp levels, roundtrip identity, and spotlight probes against CPU. \\
 \addlinespace
@@ -467,9 +470,9 @@ In compliance with laboratory submission requirements (\S8), all AI interactions
 5 & Part IV: WBOIT Formulation & Implemented view-depth weighting and dual-target blend composite pass. & Proved 2:1 weight ratio on paper; verified fp16 saturation bounds under 40,000 particles. \\
 \bottomrule
 \end{tabular}
-\caption{AI Assistant Consultation and Verification Audit Log.}
-\end{table}
+\end{center}
 
+\vspace{1.5em}
 % -----------------------------------------------------------------------------
 \section{References}
 % -----------------------------------------------------------------------------
