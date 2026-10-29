@@ -17,13 +17,11 @@ void main() {
   vec3 B  = normalize(inBitangent);
   vec3 L  = normalize(u.light.xyz);
 
-  // TODO(TASK 2b)
-  // Read the normal map (tex1) at inUV and decode it to a vector n in [-1, 1]. A DirectX
-  // map (u.knob == 1) stores green the other way up: flip n.y. Then take n from
-  // tangent space to world space with the matrix whose columns are T, B and Ng,
-  // and normalize the result.
-  // For now N is the geometric normal: the map is ignored, the sphere is smooth.
-  vec3 N = Ng;
+  vec3 n = texture(tex1, inUV).xyz * 2.0 - 1.0;
+  if (u.knob == 1u) {
+    n.y = -n.y;
+  }
+  vec3 N = normalize(mat3(T, B, Ng) * n);
 
   vec3 albedo = texture(tex0, inUV).rgb;
   vec3 lit    = albedo * (0.08 + 0.92 * max(dot(N, L), 0.0)) * u.light.w;

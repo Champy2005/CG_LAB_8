@@ -98,7 +98,11 @@ target_link_libraries(lab08core PUBLIC
   stb
 )
 
-target_compile_options(lab08core PUBLIC -Wall -Wextra)
+if(MSVC)
+  target_compile_options(lab08core PUBLIC /W3)
+else()
+  target_compile_options(lab08core PUBLIC -Wall -Wextra)
+endif()
 
 find_program(GLSLC NAMES glslc glslangValidator)
 

@@ -1,5 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
+where cmake >nul 2>&1 || set "PATH=C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin;C:\vcpkg\installed\x64-windows\bin;C:\VulkanSDK\1.4.357.0\Bin;%PATH%"
+if not defined CMAKE_PREFIX_PATH set "CMAKE_PREFIX_PATH=C:\vcpkg\installed\x64-windows"
 set BUILD=build
 set TARGET=%1
 

@@ -1,0 +1,8 @@
+CompileFlags:
+  Add:
+    - -std=c++20
+    - -IC:/vcpkg/installed/x64-windows/include
+    - -IC:/VulkanSDK/1.4.357.0/include
+    - -Isrc
+    - -Iexternal/stb
+
